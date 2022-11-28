@@ -1,8 +1,10 @@
+package algo3_package;
+
 public class Edge {
     private int key;
     private Vertex source;
     private Vertex destination;
-    private int weight;
+    private double weight;
 
     static int keyCounter = 0;
 
@@ -11,6 +13,12 @@ public class Edge {
         this.source = source;
         this.destination = destination;
         this.weight = weight;
+    }
+    public Edge(Edge e) {
+        this.source = e.source;
+        this.destination = e.destination;
+        this.weight = e.weight;
+        this.key = e.key;
     }
 
     public Vertex getSource() {
@@ -21,10 +29,10 @@ public class Edge {
         return destination;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
-    public void setWeight(int w) {
+    public void setWeight(double w) {
         this.weight = w;
     }
 

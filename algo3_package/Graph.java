@@ -1,10 +1,12 @@
+package algo3_package;
+
 import java.util.ArrayList;
 
 import static java.lang.Double.POSITIVE_INFINITY;
 
 public class Graph {
-    private ArrayList<Vertex> vertexes = new ArrayList<Vertex>();
-    private ArrayList<Edge> edges = new ArrayList<Edge>();
+    private ArrayList<Vertex> vertexes;
+    private ArrayList<Edge> edges;
 
     public Graph(ArrayList<Vertex> vertexes, ArrayList<Edge> edges) {
         this.vertexes = vertexes;
@@ -41,9 +43,10 @@ public class Graph {
         SortedArrayList heap = new SortedArrayList();
         Edge minEdge;
 
-        System.arraycopy(this.edges, 0, edgesCopy, 0, edges.size());
-        for (Edge e : edgesCopy)
-            e.setWeight((int) POSITIVE_INFINITY);
+        for (Edge e : this.edges) {
+            edgesCopy.add(new Edge(e));
+            edgesCopy.get(edgesCopy.size()-1).setWeight(POSITIVE_INFINITY);
+        }
         graphTag.addVertex(this.vertexes.get(0));
         updateWeightForVertexEdge(graphTag.vertexes.get(0), edgesCopy);
         for (Edge e : edgesCopy)
@@ -79,7 +82,7 @@ public class Graph {
 
     }
 
-    private int getEdgeWeightByKey(int key) {
+    private double getEdgeWeightByKey(int key) {
         for (Edge e : this.edges)
             if (e.getKey() == key)
                 return e.getWeight();
@@ -88,8 +91,23 @@ public class Graph {
     }
 
     public void print() {
-        for (Edge e : edges) {
-            System.out.println(e.getSource().getKey() + "-" + e.getWeight() + "-" + e.getDestination().getKey());
+        System.out.println("Vertexes: ");
+        for (Vertex v : this.vertexes) {
+            System.out.print(v.getKey());
+            if(v.getKey() != this.vertexes.get(this.vertexes.size()-1).getKey())
+                System.out.print(", ");
         }
+
+        if(this.vertexes.size() > 0)
+            System.out.println();
+
+        System.out.println("Edges: ");
+        for (Edge e : edges) {
+            System.out.print(e.getSource().getKey() + "-" + e.getWeight() + "-" + e.getDestination().getKey());
+            if(e.getKey() != this.edges.get(this.edges.size()-1).getKey())
+                System.out.print(", ");
+        }
+
+        System.out.println();
     }
 }

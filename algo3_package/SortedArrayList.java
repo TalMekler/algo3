@@ -1,3 +1,5 @@
+package algo3_package;
+
 import java.util.ArrayList;
 
 public class SortedArrayList {
@@ -6,24 +8,27 @@ public class SortedArrayList {
 
     public SortedArrayList() {}
 
-    private void swap(Edge e1, Edge e2) {
-        e1.setSource(e2.getSource());
-        e1.setDestination(e2.getDestination());
-        e1.setKey(e2.getKey());
-        e1.setWeight(e2.getWeight());
-    }
-
     private void sortArray() {
-        Edge temp;
         for (int i = 0; i < sortedEdges.size(); i++) {
             for (int j = 0; j < sortedEdges.size(); j++) {
-                if (sortedEdges.get(i).getWeight() <= sortedEdges.get(j).getWeight()) {
-                    temp = sortedEdges.get(i);
+                if (sortedEdges.get(j).getWeight() <= sortedEdges.get(i).getWeight()) {
                     swap(sortedEdges.get(i), sortedEdges.get(j));
-                    swap(sortedEdges.get(j), temp);
                 }
             }
         }
+    }
+
+    private void swap(Edge e1, Edge e2) {
+        Edge temp = new Edge(e1);
+        e1.setSource(e2.getSource());
+        e1.setDestination(e2.getDestination());
+        e1.setWeight(e2.getWeight());
+        e1.setKey(e2.getKey());
+
+        e2.setSource(temp.getSource());
+        e2.setDestination(temp.getDestination());
+        e2.setWeight(temp.getWeight());
+        e2.setKey(temp.getKey());
     }
 
     public void add(Edge e) {

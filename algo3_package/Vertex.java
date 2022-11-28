@@ -1,3 +1,5 @@
+package algo3_package;
+
 import java.util.*;
 
 public class Vertex {
