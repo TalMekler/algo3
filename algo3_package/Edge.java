@@ -8,7 +8,7 @@ public class Edge {
 
     static int keyCounter = 0;
 
-    public Edge(Vertex source, Vertex destination, int weight) {
+    public Edge(Vertex source, Vertex destination, double weight) {
         this.key = keyCounter++;
         this.source = source;
         this.destination = destination;

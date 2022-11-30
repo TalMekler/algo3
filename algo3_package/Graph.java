@@ -12,82 +12,87 @@ public class Graph {
         this.vertexes = new ArrayList<Vertex>();
         this.edges = new ArrayList<Edge>();
     }
+
     public Graph(ArrayList<Vertex> vertexes, ArrayList<Edge> edges) {
         this.vertexes = vertexes;
         this.edges = edges;
     }
 
     public void makeRandomGraph() {
-        this.addEdge(new Edge(new Vertex("A"), new Vertex("B"), 0));
-        this.addEdge(new Edge(new Vertex("A"), new Vertex("C"), 0));
-        this.addEdge(new Edge(new Vertex("A"), new Vertex("N"), 0));
-        this.addEdge(new Edge(new Vertex("A"), new Vertex("S"), 0));
-        this.addEdge(new Edge(new Vertex("A"), new Vertex("O"), 0));
-        this.addEdge(new Edge(new Vertex("A"), new Vertex("T"), 0));
+        for (int i = 0; i < 50; i++) {
+            addRandomEdge();
+        }
 
-        this.addEdge(new Edge(new Vertex("B"), new Vertex("O"), 0));
-        this.addEdge(new Edge(new Vertex("B"), new Vertex("N"), 0));
-        this.addEdge(new Edge(new Vertex("B"), new Vertex("P"), 0));
-        this.addEdge(new Edge(new Vertex("B"), new Vertex("D"), 8));
+//        this.addEdge(new Edge(new Vertex("A"), new Vertex("B"), 0));
+//        this.addEdge(new Edge(new Vertex("A"), new Vertex("C"), 0));
+//        this.addEdge(new Edge(new Vertex("A"), new Vertex("N"), 0));
+//        this.addEdge(new Edge(new Vertex("A"), new Vertex("S"), 0));
+//        this.addEdge(new Edge(new Vertex("A"), new Vertex("O"), 0));
+//        this.addEdge(new Edge(new Vertex("A"), new Vertex("T"), 0));
+//
+//        this.addEdge(new Edge(new Vertex("B"), new Vertex("O"), 0));
+//        this.addEdge(new Edge(new Vertex("B"), new Vertex("N"), 0));
+//        this.addEdge(new Edge(new Vertex("B"), new Vertex("P"), 0));
+//        this.addEdge(new Edge(new Vertex("B"), new Vertex("D"), 8));
+//
+//        this.addEdge(new Edge(new Vertex("C"), new Vertex("N"), 0));
+//        this.addEdge(new Edge(new Vertex("C"), new Vertex("E"), 0));
+//        this.addEdge(new Edge(new Vertex("C"), new Vertex("F"), 0));
+//
+//        this.addEdge(new Edge(new Vertex("D"), new Vertex("N"), 0));
+//        this.addEdge(new Edge(new Vertex("D"), new Vertex("M"), 0));
+//        this.addEdge(new Edge(new Vertex("D"), new Vertex("G"), 0));
+//        this.addEdge(new Edge(new Vertex("D"), new Vertex("F"), 0));
+//        this.addEdge(new Edge(new Vertex("D"), new Vertex("E"), 0));
+//
+//        this.addEdge(new Edge(new Vertex("E"), new Vertex("G"), 0));
+//        this.addEdge(new Edge(new Vertex("E"), new Vertex("H"), 0));
+//        this.addEdge(new Edge(new Vertex("E"), new Vertex("I"), 0));
+//
+//        this.addEdge(new Edge(new Vertex("F"), new Vertex("H"), 0));
+//        this.addEdge(new Edge(new Vertex("F"), new Vertex("I"), 0));
+//
+//        this.addEdge(new Edge(new Vertex("G"), new Vertex("M"), 0));
+//        this.addEdge(new Edge(new Vertex("G"), new Vertex("L"), 0));
+//        this.addEdge(new Edge(new Vertex("G"), new Vertex("K"), 0));
+//        this.addEdge(new Edge(new Vertex("G"), new Vertex("J"), 0));
+//        this.addEdge(new Edge(new Vertex("G"), new Vertex("I"), 0));
+//
+//        this.addEdge(new Edge(new Vertex("I"), new Vertex("J"), 0));
+//
+//        this.addEdge(new Edge(new Vertex("J"), new Vertex("M"), 0));
+//        this.addEdge(new Edge(new Vertex("J"), new Vertex("K"), 0));
+//
+//        this.addEdge(new Edge(new Vertex("K"), new Vertex("M"), 0));
+//        this.addEdge(new Edge(new Vertex("K"), new Vertex("L"), 0));
+//        this.addEdge(new Edge(new Vertex("K"), new Vertex("Q"), 0));
+//
+//        this.addEdge(new Edge(new Vertex("L"), new Vertex("Q"), 0));
+//        this.addEdge(new Edge(new Vertex("L"), new Vertex("R"), 0));
+//        this.addEdge(new Edge(new Vertex("L"), new Vertex("P"), 0));
+//        this.addEdge(new Edge(new Vertex("L"), new Vertex("N"), 0));
+//        this.addEdge(new Edge(new Vertex("L"), new Vertex("M"), 0));
+//
+//        this.addEdge(new Edge(new Vertex("M"), new Vertex("N"), 0));
+//
+//        this.addEdge(new Edge(new Vertex("N"), new Vertex("O"), 0));
+//        this.addEdge(new Edge(new Vertex("N"), new Vertex("P"), 0));
+//
+//        this.addEdge(new Edge(new Vertex("O"), new Vertex("P"), 0));
+//        this.addEdge(new Edge(new Vertex("O"), new Vertex("S"), 0));
+//
+//        this.addEdge(new Edge(new Vertex("P"), new Vertex("T"), 0));
+//
+//        this.addEdge(new Edge(new Vertex("Q"), new Vertex("S"), 0));
+//        this.addEdge(new Edge(new Vertex("Q"), new Vertex("Q"), 0));
+//
+//        this.addEdge(new Edge(new Vertex("R"), new Vertex("S"), 0));
+//        this.addEdge(new Edge(new Vertex("R"), new Vertex("T"), 0));
+//
+//        this.addEdge(new Edge(new Vertex("S"), new Vertex("T"), 0));
 
-        this.addEdge(new Edge(new Vertex("C"), new Vertex("N"), 0));
-        this.addEdge(new Edge(new Vertex("C"), new Vertex("E"), 0));
-        this.addEdge(new Edge(new Vertex("C"), new Vertex("F"), 0));
-
-        this.addEdge(new Edge(new Vertex("D"), new Vertex("N"), 0));
-        this.addEdge(new Edge(new Vertex("D"), new Vertex("M"), 0));
-        this.addEdge(new Edge(new Vertex("D"), new Vertex("G"), 0));
-        this.addEdge(new Edge(new Vertex("D"), new Vertex("F"), 0));
-        this.addEdge(new Edge(new Vertex("D"), new Vertex("E"), 0));
-
-        this.addEdge(new Edge(new Vertex("E"), new Vertex("G"), 0));
-        this.addEdge(new Edge(new Vertex("E"), new Vertex("H"), 0));
-        this.addEdge(new Edge(new Vertex("E"), new Vertex("I"), 0));
-
-        this.addEdge(new Edge(new Vertex("F"), new Vertex("H"), 0));
-        this.addEdge(new Edge(new Vertex("F"), new Vertex("I"), 0));
-
-        this.addEdge(new Edge(new Vertex("G"), new Vertex("M"), 0));
-        this.addEdge(new Edge(new Vertex("G"), new Vertex("L"), 0));
-        this.addEdge(new Edge(new Vertex("G"), new Vertex("K"), 0));
-        this.addEdge(new Edge(new Vertex("G"), new Vertex("J"), 0));
-        this.addEdge(new Edge(new Vertex("G"), new Vertex("I"), 0));
-
-        this.addEdge(new Edge(new Vertex("I"), new Vertex("J"), 0));
-
-        this.addEdge(new Edge(new Vertex("J"), new Vertex("M"), 0));
-        this.addEdge(new Edge(new Vertex("J"), new Vertex("K"), 0));
-
-        this.addEdge(new Edge(new Vertex("K"), new Vertex("M"), 0));
-        this.addEdge(new Edge(new Vertex("K"), new Vertex("L"), 0));
-        this.addEdge(new Edge(new Vertex("K"), new Vertex("Q"), 0));
-
-        this.addEdge(new Edge(new Vertex("L"), new Vertex("Q"), 0));
-        this.addEdge(new Edge(new Vertex("L"), new Vertex("R"), 0));
-        this.addEdge(new Edge(new Vertex("L"), new Vertex("P"), 0));
-        this.addEdge(new Edge(new Vertex("L"), new Vertex("N"), 0));
-        this.addEdge(new Edge(new Vertex("L"), new Vertex("M"), 0));
-
-        this.addEdge(new Edge(new Vertex("M"), new Vertex("N"), 0));
-
-        this.addEdge(new Edge(new Vertex("N"), new Vertex("O"), 0));
-        this.addEdge(new Edge(new Vertex("N"), new Vertex("P"), 0));
-
-        this.addEdge(new Edge(new Vertex("O"), new Vertex("P"), 0));
-        this.addEdge(new Edge(new Vertex("O"), new Vertex("S"), 0));
-
-        this.addEdge(new Edge(new Vertex("P"), new Vertex("T"), 0));
-
-        this.addEdge(new Edge(new Vertex("Q"), new Vertex("S"), 0));
-        this.addEdge(new Edge(new Vertex("Q"), new Vertex("Q"), 0));
-
-        this.addEdge(new Edge(new Vertex("R"), new Vertex("S"), 0));
-        this.addEdge(new Edge(new Vertex("R"), new Vertex("T"), 0));
-
-        this.addEdge(new Edge(new Vertex("S"), new Vertex("T"), 0));
-
-        for (Edge e : this.getEdges())
-            e.setWeight((int) (Math.random() * 50)); // init random weight to the graph edges
+//        for (Edge e : this.getEdges())
+//            e.setWeight((int) (Math.random() * 50)); // init random weight to the graph edges
     }
 
     public void addVertex(Vertex vertex) {
@@ -102,6 +107,42 @@ public class Graph {
             vertexes.add(edge.getDestination());
 
         this.edges.add(edge);
+    }
+
+    public void addRandomEdge() {
+        String key1 = new String();
+        String key2 = new String();
+        char key1Char, key2Char;
+        Edge e;
+
+        while (true) {
+            key1 = "";
+            key2 = "";
+            do {
+                key1Char = (char) ((int) (Math.random() * 26) + 'A');
+                key2Char = (char) ((int) (Math.random() * 26) + 'A');
+            } while (key1Char == key2Char);
+            key1 += key1Char;
+            key2 += key2Char;
+
+            e = new Edge(new Vertex(key1), new Vertex(key2), (int) (Math.random() * 50));
+            if (!edgeExist(e)) {
+                addEdge(e);
+                System.out.println("Edge added: " + e.getSource().getKey() + "-" + e.getWeight() + "-" + e.getDestination().getKey());
+                return;
+            }
+        }
+
+    }
+
+    private boolean edgeExist(Edge e) {
+        for (Edge edge : this.edges) {
+            if ((edge.getSource().getKey() == e.getSource().getKey() && edge.getDestination().getKey() == e.getDestination().getKey()) ||
+                    (edge.getSource().getKey() == e.getDestination().getKey() && edge.getDestination().getKey() == e.getSource().getKey()))
+                return true;
+        }
+
+        return false;
     }
 
     public ArrayList<Edge> getEdges() {
