@@ -19,77 +19,77 @@ public class Graph {
     }
 
     public void makeRandomGraph() {
-        for (int i = 0; i < 50; i++) {
-            addRandomEdge();
-        }
+//        for (int i = 0; i < 50; i++) {
+//            addRandomEdge();
+//        }
 
-//        this.addEdge(new Edge(new Vertex("A"), new Vertex("B"), 0));
-//        this.addEdge(new Edge(new Vertex("A"), new Vertex("C"), 0));
-//        this.addEdge(new Edge(new Vertex("A"), new Vertex("N"), 0));
-//        this.addEdge(new Edge(new Vertex("A"), new Vertex("S"), 0));
-//        this.addEdge(new Edge(new Vertex("A"), new Vertex("O"), 0));
-//        this.addEdge(new Edge(new Vertex("A"), new Vertex("T"), 0));
-//
-//        this.addEdge(new Edge(new Vertex("B"), new Vertex("O"), 0));
-//        this.addEdge(new Edge(new Vertex("B"), new Vertex("N"), 0));
-//        this.addEdge(new Edge(new Vertex("B"), new Vertex("P"), 0));
-//        this.addEdge(new Edge(new Vertex("B"), new Vertex("D"), 8));
-//
-//        this.addEdge(new Edge(new Vertex("C"), new Vertex("N"), 0));
-//        this.addEdge(new Edge(new Vertex("C"), new Vertex("E"), 0));
-//        this.addEdge(new Edge(new Vertex("C"), new Vertex("F"), 0));
-//
-//        this.addEdge(new Edge(new Vertex("D"), new Vertex("N"), 0));
-//        this.addEdge(new Edge(new Vertex("D"), new Vertex("M"), 0));
-//        this.addEdge(new Edge(new Vertex("D"), new Vertex("G"), 0));
-//        this.addEdge(new Edge(new Vertex("D"), new Vertex("F"), 0));
-//        this.addEdge(new Edge(new Vertex("D"), new Vertex("E"), 0));
-//
-//        this.addEdge(new Edge(new Vertex("E"), new Vertex("G"), 0));
-//        this.addEdge(new Edge(new Vertex("E"), new Vertex("H"), 0));
-//        this.addEdge(new Edge(new Vertex("E"), new Vertex("I"), 0));
-//
-//        this.addEdge(new Edge(new Vertex("F"), new Vertex("H"), 0));
-//        this.addEdge(new Edge(new Vertex("F"), new Vertex("I"), 0));
-//
-//        this.addEdge(new Edge(new Vertex("G"), new Vertex("M"), 0));
-//        this.addEdge(new Edge(new Vertex("G"), new Vertex("L"), 0));
-//        this.addEdge(new Edge(new Vertex("G"), new Vertex("K"), 0));
-//        this.addEdge(new Edge(new Vertex("G"), new Vertex("J"), 0));
-//        this.addEdge(new Edge(new Vertex("G"), new Vertex("I"), 0));
-//
-//        this.addEdge(new Edge(new Vertex("I"), new Vertex("J"), 0));
-//
-//        this.addEdge(new Edge(new Vertex("J"), new Vertex("M"), 0));
-//        this.addEdge(new Edge(new Vertex("J"), new Vertex("K"), 0));
-//
-//        this.addEdge(new Edge(new Vertex("K"), new Vertex("M"), 0));
-//        this.addEdge(new Edge(new Vertex("K"), new Vertex("L"), 0));
-//        this.addEdge(new Edge(new Vertex("K"), new Vertex("Q"), 0));
-//
-//        this.addEdge(new Edge(new Vertex("L"), new Vertex("Q"), 0));
-//        this.addEdge(new Edge(new Vertex("L"), new Vertex("R"), 0));
-//        this.addEdge(new Edge(new Vertex("L"), new Vertex("P"), 0));
-//        this.addEdge(new Edge(new Vertex("L"), new Vertex("N"), 0));
-//        this.addEdge(new Edge(new Vertex("L"), new Vertex("M"), 0));
-//
-//        this.addEdge(new Edge(new Vertex("M"), new Vertex("N"), 0));
-//
-//        this.addEdge(new Edge(new Vertex("N"), new Vertex("O"), 0));
-//        this.addEdge(new Edge(new Vertex("N"), new Vertex("P"), 0));
-//
-//        this.addEdge(new Edge(new Vertex("O"), new Vertex("P"), 0));
-//        this.addEdge(new Edge(new Vertex("O"), new Vertex("S"), 0));
-//
-//        this.addEdge(new Edge(new Vertex("P"), new Vertex("T"), 0));
-//
-//        this.addEdge(new Edge(new Vertex("Q"), new Vertex("S"), 0));
-//        this.addEdge(new Edge(new Vertex("Q"), new Vertex("Q"), 0));
-//
-//        this.addEdge(new Edge(new Vertex("R"), new Vertex("S"), 0));
-//        this.addEdge(new Edge(new Vertex("R"), new Vertex("T"), 0));
-//
-//        this.addEdge(new Edge(new Vertex("S"), new Vertex("T"), 0));
+        this.addEdge(new Edge(new Vertex("A"), new Vertex("B"), 1));
+        this.addEdge(new Edge(new Vertex("A"), new Vertex("C"), 2));
+        this.addEdge(new Edge(new Vertex("A"), new Vertex("N"), 3));
+        this.addEdge(new Edge(new Vertex("A"), new Vertex("S"), 4));
+        this.addEdge(new Edge(new Vertex("A"), new Vertex("O"), 5));
+        this.addEdge(new Edge(new Vertex("A"), new Vertex("T"), 6));
+
+        this.addEdge(new Edge(new Vertex("B"), new Vertex("O"), 7));
+        this.addEdge(new Edge(new Vertex("B"), new Vertex("N"), 8));
+        this.addEdge(new Edge(new Vertex("B"), new Vertex("P"), 9));
+        this.addEdge(new Edge(new Vertex("B"), new Vertex("D"), 10));
+
+        this.addEdge(new Edge(new Vertex("C"), new Vertex("N"), 1));
+        this.addEdge(new Edge(new Vertex("C"), new Vertex("E"), 2));
+        this.addEdge(new Edge(new Vertex("C"), new Vertex("F"), 3));
+
+        this.addEdge(new Edge(new Vertex("D"), new Vertex("N"), 4));
+        this.addEdge(new Edge(new Vertex("D"), new Vertex("M"), 5));
+        this.addEdge(new Edge(new Vertex("D"), new Vertex("G"), 6));
+        this.addEdge(new Edge(new Vertex("D"), new Vertex("F"), 7));
+        this.addEdge(new Edge(new Vertex("D"), new Vertex("E"), 8));
+
+        this.addEdge(new Edge(new Vertex("E"), new Vertex("G"), 9));
+        this.addEdge(new Edge(new Vertex("E"), new Vertex("H"), 10));
+        this.addEdge(new Edge(new Vertex("E"), new Vertex("I"), 1));
+
+        this.addEdge(new Edge(new Vertex("F"), new Vertex("H"), 2));
+        this.addEdge(new Edge(new Vertex("F"), new Vertex("I"), 3));
+
+        this.addEdge(new Edge(new Vertex("G"), new Vertex("M"), 4));
+        this.addEdge(new Edge(new Vertex("G"), new Vertex("L"), 5));
+        this.addEdge(new Edge(new Vertex("G"), new Vertex("K"), 6));
+        this.addEdge(new Edge(new Vertex("G"), new Vertex("J"), 7));
+        this.addEdge(new Edge(new Vertex("G"), new Vertex("I"), 8));
+
+        this.addEdge(new Edge(new Vertex("I"), new Vertex("J"), 9));
+
+        this.addEdge(new Edge(new Vertex("J"), new Vertex("M"), 10));
+        this.addEdge(new Edge(new Vertex("J"), new Vertex("K"), 1));
+
+        this.addEdge(new Edge(new Vertex("K"), new Vertex("M"), 2));
+        this.addEdge(new Edge(new Vertex("K"), new Vertex("L"), 3));
+        this.addEdge(new Edge(new Vertex("K"), new Vertex("Q"), 4));
+
+        this.addEdge(new Edge(new Vertex("L"), new Vertex("Q"), 5));
+        this.addEdge(new Edge(new Vertex("L"), new Vertex("R"), 6));
+        this.addEdge(new Edge(new Vertex("L"), new Vertex("P"), 7));
+        this.addEdge(new Edge(new Vertex("L"), new Vertex("N"), 8));
+        this.addEdge(new Edge(new Vertex("L"), new Vertex("M"), 9));
+
+        this.addEdge(new Edge(new Vertex("M"), new Vertex("N"), 10));
+
+        this.addEdge(new Edge(new Vertex("N"), new Vertex("O"), 1));
+        this.addEdge(new Edge(new Vertex("N"), new Vertex("P"), 2));
+
+        this.addEdge(new Edge(new Vertex("O"), new Vertex("P"), 3));
+        this.addEdge(new Edge(new Vertex("O"), new Vertex("S"), 4));
+
+        this.addEdge(new Edge(new Vertex("P"), new Vertex("T"), 5));
+
+        this.addEdge(new Edge(new Vertex("Q"), new Vertex("S"), 6));
+        this.addEdge(new Edge(new Vertex("Q"), new Vertex("Q"), 7));
+
+        this.addEdge(new Edge(new Vertex("R"), new Vertex("S"), 8));
+        this.addEdge(new Edge(new Vertex("R"), new Vertex("T"), 9));
+
+        this.addEdge(new Edge(new Vertex("S"), new Vertex("T"), 10));
 
 //        for (Edge e : this.getEdges())
 //            e.setWeight((int) (Math.random() * 50)); // init random weight to the graph edges
@@ -167,7 +167,7 @@ public class Graph {
 
         for (Edge e : this.edges) {
             edgesCopy.add(new Edge(e));
-            edgesCopy.get(edgesCopy.size() - 1).setWeight(POSITIVE_INFINITY);
+            edgesCopy.get(edgesCopy.size() - 1).setWeight((int)POSITIVE_INFINITY);
         }
         graphTag.addVertex(this.vertexes.get(0));
         updateWeightForVertexEdge(graphTag.vertexes.get(0), edgesCopy);
@@ -204,7 +204,7 @@ public class Graph {
 
     }
 
-    private double getEdgeWeightByKey(int key) {
+    private int getEdgeWeightByKey(int key) {
         for (Edge e : this.edges)
             if (e.getKey() == key)
                 return e.getWeight();

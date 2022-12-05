@@ -4,11 +4,11 @@ public class Edge {
     private int key;
     private Vertex source;
     private Vertex destination;
-    private double weight;
+    private int weight;
 
     static int keyCounter = 0;
 
-    public Edge(Vertex source, Vertex destination, double weight) {
+    public Edge(Vertex source, Vertex destination, int weight) {
         this.key = keyCounter++;
         this.source = source;
         this.destination = destination;
@@ -29,10 +29,10 @@ public class Edge {
         return destination;
     }
 
-    public double getWeight() {
+    public int getWeight() {
         return weight;
     }
-    public void setWeight(double w) {
+    public void setWeight(int w) {
         this.weight = w;
     }
 
