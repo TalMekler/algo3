@@ -1,6 +1,7 @@
 package algo3_package;
 
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 import static java.lang.Double.POSITIVE_INFINITY;
 
@@ -93,6 +94,18 @@ public class Graph {
 
 //        for (Edge e : this.getEdges())
 //            e.setWeight((int) (Math.random() * 50)); // init random weight to the graph edges
+
+//        // Lior's graph
+//        this.addEdge(new Edge(new Vertex("1"), new Vertex("3"), 1));
+//        this.addEdge(new Edge(new Vertex("1"), new Vertex("2"), 5));
+//        this.addEdge(new Edge(new Vertex("2"), new Vertex("5"), 6));
+//        this.addEdge(new Edge(new Vertex("2"), new Vertex("9"), 7));
+//        this.addEdge(new Edge(new Vertex("3"), new Vertex("4"), 4));
+//        this.addEdge(new Edge(new Vertex("3"), new Vertex("5"), 2));
+//        this.addEdge(new Edge(new Vertex("4"), new Vertex("5"), 3));
+//        this.addEdge(new Edge(new Vertex("6"), new Vertex("8"), 10));
+//        this.addEdge(new Edge(new Vertex("6"), new Vertex("9"), 9));
+//        this.addEdge(new Edge(new Vertex("7"), new Vertex("9"), 8));
     }
 
     public void addVertex(Vertex vertex) {
@@ -161,33 +174,36 @@ public class Graph {
     public Graph prim() {
         Graph graphTag = new Graph(new ArrayList<Vertex>(), new ArrayList<Edge>());
         ArrayList<Edge> edgesCopy = new ArrayList<>();
-
-        SortedArrayList heap = new SortedArrayList();
         Edge minEdge;
+
+        //TODO: left this and remove the first 'heap'
+        PriorityQueue<Edge> heap = new PriorityQueue<Edge>();
 
         for (Edge e : this.edges) {
             edgesCopy.add(new Edge(e));
             edgesCopy.get(edgesCopy.size() - 1).setWeight((int)POSITIVE_INFINITY);
         }
         graphTag.addVertex(this.vertexes.get(0));
-        updateWeightForVertexEdge(graphTag.vertexes.get(0), edgesCopy);
-        for (Edge e : edgesCopy)
-            heap.add(e); // add all edges to the heap
+        heap.addAll(updateWeightForVertexEdge(graphTag.vertexes.get(0), edgesCopy));
 
-        while (heap.sortedEdges.size() > 0) {
+        //TODO: left this and remove the first 'heap'
+//        for(Edge e : edgesCopy)
+//            heap.add(e);
+
+        while (heap.size() > 0) {
             minEdge = heap.remove();
+
             if (!(vertexExist(minEdge.getSource(), graphTag.vertexes) && vertexExist(minEdge.getDestination(), graphTag.vertexes))) { // one of the vertexes not exist
                 if (!(vertexExist(minEdge.getSource(), graphTag.vertexes))) {
                     graphTag.addVertex(minEdge.getSource());
-                    updateWeightForVertexEdge(minEdge.getSource(), edgesCopy);
-                    heap.updateWeight(edgesCopy);
+                    heap.addAll(updateWeightForVertexEdge(minEdge.getSource(), edgesCopy));
                 }
                 if (!(vertexExist(minEdge.getDestination(), graphTag.vertexes))) {
                     graphTag.addVertex(minEdge.getDestination());
-                    updateWeightForVertexEdge(minEdge.getDestination(), edgesCopy);
-                    heap.updateWeight(edgesCopy);
+                    heap.addAll(updateWeightForVertexEdge(minEdge.getDestination(), edgesCopy));
                 }
                 graphTag.addEdge(minEdge);
+
             }
 
         }
@@ -195,13 +211,15 @@ public class Graph {
         return graphTag;
     }
 
-    private void updateWeightForVertexEdge(Vertex v, ArrayList<Edge> edges) {
-
+    private ArrayList<Edge> updateWeightForVertexEdge(Vertex v, ArrayList<Edge> edges) {
+        ArrayList<Edge> retArr = new ArrayList<>();
         for (Edge e : edges) {
-            if (e.getSource().getKey().equals(v.getKey()) || e.getDestination().getKey().equals(v.getKey()))
+            if (e.getSource().getKey().equals(v.getKey()) || e.getDestination().getKey().equals(v.getKey())) {
                 e.setWeight(getEdgeWeightByKey(e.getKey()));
+                retArr.add(e);
+            }
         }
-
+        return retArr;
     }
 
     private int getEdgeWeightByKey(int key) {

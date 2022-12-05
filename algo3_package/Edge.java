@@ -1,6 +1,8 @@
 package algo3_package;
 
-public class Edge {
+import java.util.Objects;
+
+public class Edge implements Comparable<Edge> {
     private int key;
     private Vertex source;
     private Vertex destination;
@@ -19,6 +21,10 @@ public class Edge {
         this.destination = e.destination;
         this.weight = e.weight;
         this.key = e.key;
+    }
+
+    @Override public int compareTo(Edge other) {
+        return this.weight - other.weight;
     }
 
     public Vertex getSource() {
