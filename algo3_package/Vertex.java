@@ -62,8 +62,9 @@ public class Vertex {
 
     public void printPath() {
         Vertex currentVertex = this;
+        System.out.print("Path from " + currentVertex.getKey() +" to the start: ");
         while(currentVertex.getPi() != null) {
-            System.out.println(currentVertex.getEdgeToNeighbor(currentVertex.getPi().getKey()));
+            System.out.print(currentVertex.getEdgeToNeighbor(currentVertex.getPi().getKey()) + ", ");
             currentVertex = currentVertex.getPi();
         }
     }

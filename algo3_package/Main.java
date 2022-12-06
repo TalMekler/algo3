@@ -15,6 +15,8 @@ public class Main {
         System.out.println("Last edge: " + graphPrim.getEdges().get(graphPrim.getEdges().size() - 1));
         graphPrim.print();
 
+        graphPrim.getVertexByKey("F").printPath();
+
 
         System.out.println("\nDone!");
     }
