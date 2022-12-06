@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 import static java.lang.Double.POSITIVE_INFINITY;
 
 public class Graph {
-    private ArrayList<Vertex> vertexes;
+    public ArrayList<Vertex> vertexes;
     private ArrayList<Edge> edges;
 
     public Graph() {
@@ -101,10 +101,8 @@ public class Graph {
 //                addEdge(e);
 //        }
 
-//        for (Edge e : this.getEdges())
-//            e.setWeight((int) (Math.random() * 50)); // init random weight to the graph edges
 
-//        // Lior's graph
+        // Lior's graph
         vertexes.get(0).addNeighbor(vertexes.get(2) , 1);
         vertexes.get(0).addNeighbor(vertexes.get(1) , 5);
         vertexes.get(1).addNeighbor(vertexes.get(4) , 6);
@@ -127,10 +125,22 @@ public class Graph {
             return;
         this.vertexes.add(vertex);
     }
-
+    public Vertex getVertexByKey(String key) {
+        for(Vertex v : this.vertexes)
+            if(v.getKey().equals(key))
+                return v;
+        return null;
+    }
     public void addEdge(Edge edge) {
         if(edgeExist(edge))
             return;
+        addVertex(edge.getSource());
+        addVertex(edge.getDestination());
+
+        getVertexByKey(edge.getSource().getKey()).addNeighbor(getVertexByKey(edge.getDestination().getKey()), edge.getWeight());
+
+        edge.getSource().addNeighbor(edge.getDestination() , edge.getWeight());
+
         edges.add(edge);
     }
 

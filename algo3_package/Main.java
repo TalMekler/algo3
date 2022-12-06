@@ -11,6 +11,9 @@ public class Main {
         graphPrim = graph.prim();
         graphPrim.print();
 
+        graphPrim.addEdge(new Edge(new Vertex("D"), new Vertex("F"), 1));
+        System.out.println("Last edge: " + graphPrim.getEdges().get(graphPrim.getEdges().size() - 1));
+
 
         System.out.println("\nDone!");
     }

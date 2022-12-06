@@ -8,7 +8,7 @@ public class Vertex {
     private final ArrayList<Integer> edgesWeight;
     ArrayList<Edge> edges;
     private Vertex pi;
-    private int color; // 0 - white, 1 - gray, 2 - black
+//    private int color; // 0 - white, 1 - gray, 2 - black
 
     public boolean equals(Vertex other) {
         return key == other.key;
@@ -19,7 +19,7 @@ public class Vertex {
         this.edges = new ArrayList<Edge>();
         this.edgesWeight = new ArrayList<Integer>();
         this.pi = null;
-        this.color = 0;
+//        this.color = 0;
     }
 
     public String getKey() {
@@ -30,11 +30,6 @@ public class Vertex {
         return neighbors;
     }
 
-    public Vertex getNeighborByIndex(int index) {
-        if (index < 0 || index >= neighbors.size())
-            return null;
-        return neighbors.get(index);
-    }
 
     public Edge getEdgeToNeighbor(String neighborKey){
         int index = 0;
@@ -46,16 +41,6 @@ public class Vertex {
         return null;
     }
 
-    public int getMinWeightIndex() {
-        int minIndex = 0, minWeigth = edgesWeight.get(0);
-        for (int i = 1; i < edgesWeight.size(); i++){
-            if (edgesWeight.get(i) < minWeigth) {
-                minWeigth = edgesWeight.get(i);
-                minIndex = i;
-            }
-        }
-        return minIndex;
-    }
     private boolean neighborExist(Vertex newNeighbor) {
         for(Vertex v : neighbors)
             if(v.equals(newNeighbor))
@@ -82,16 +67,11 @@ public class Vertex {
         this.pi = pi;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Vertex vertex = (Vertex) o;
-        return Objects.equals(key, vertex.key);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(key);
+    public void printPath() {
+        Vertex currentVertex = this;
+        while(currentVertex.getPi() != null) {
+            System.out.println(currentVertex.getEdgeToNeighbor(currentVertex.getPi().getKey()));
+            currentVertex = currentVertex.getPi();
+        }
     }
 }
