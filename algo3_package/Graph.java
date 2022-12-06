@@ -168,7 +168,9 @@ public class Graph {
         }
 
         graphTag.addVertex(this.vertexes.get(0));
+//        edgesCopy.addAll(graphTag.vertexes.get(0).edges);
         heap.addAll(updateWeightForVertexEdge(graphTag.vertexes.get(0), edgesCopy));
+
 
         //TODO: left this and remove the first 'heap'
 //        for(Edge e : edgesCopy)
@@ -180,15 +182,18 @@ public class Graph {
             if (!(vertexExist(minEdge.getSource(), graphTag.vertexes) && vertexExist(minEdge.getDestination(), graphTag.vertexes))) { // one of the vertexes not exist
                 if (!(vertexExist(minEdge.getSource(), graphTag.vertexes))) {
                     graphTag.addVertex(minEdge.getSource());
+                    minEdge.getSource().setPi(minEdge.getDestination());
                     heap.addAll(updateWeightForVertexEdge(minEdge.getSource(), edgesCopy));
                     edgesCopy.remove(minEdge);
                 }
                 if (!(vertexExist(minEdge.getDestination(), graphTag.vertexes))) {
                     graphTag.addVertex(minEdge.getDestination());
+                    minEdge.getDestination().setPi(minEdge.getSource());
                     heap.addAll(updateWeightForVertexEdge(minEdge.getDestination(), edgesCopy));
                     edgesCopy.remove(minEdge);
                 }
                 graphTag.addEdge(minEdge);
+                heap.addAll(updateWeightForVertexEdge(minEdge.getDestination(), edgesCopy));
 
             }
 
