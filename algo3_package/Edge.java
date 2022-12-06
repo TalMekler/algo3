@@ -10,6 +10,11 @@ public class Edge implements Comparable<Edge> {
 
     static int keyCounter = 0;
 
+    public boolean equals(Edge other) {
+        return ((source.getKey() == other.source.getKey() && destination.getKey() == other.destination.getKey()) ||
+                (source.getKey() == other.destination.getKey() && destination.getKey() == other.source.getKey())) ;
+    }
+
     public Edge(Vertex source, Vertex destination, int weight) {
         this.key = keyCounter++;
         this.source = source;
@@ -21,6 +26,11 @@ public class Edge implements Comparable<Edge> {
         this.destination = e.destination;
         this.weight = e.weight;
         this.key = e.key;
+    }
+
+    @Override
+    public String toString() {
+        return source.getKey() + "-" + weight + "-" + destination.getKey();
     }
 
     @Override public int compareTo(Edge other) {
