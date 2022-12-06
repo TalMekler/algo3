@@ -11,8 +11,8 @@ public class Edge implements Comparable<Edge> {
     static int keyCounter = 0;
 
     public boolean equals(Edge other) {
-        return ((source.getKey() == other.source.getKey() && destination.getKey() == other.destination.getKey()) ||
-                (source.getKey() == other.destination.getKey() && destination.getKey() == other.source.getKey())) ;
+        return ((source.equals(other.source) && destination.equals(other.destination)) ||
+                (source.equals(other.destination) && destination.equals(other.source))) ;
     }
 
     public Edge(Vertex source, Vertex destination, int weight) {

@@ -1,5 +1,6 @@
 package algo3_package;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 
@@ -20,141 +21,124 @@ public class Graph {
     }
 
     public void makeRandomGraph() {
-//        for (int i = 0; i < 50; i++) {
-//            addRandomEdge();
+
+        for (int i = 0; i< 20; i++){
+            System.out.println(i + " -> " + (char)(i + 'A'));
+            String k = "" + (char)(i + 'A');
+            vertexes.add(new Vertex(k));
+        }
+//
+//        vertexes.get(0).addNeighbor(vertexes.get(1) , 1);
+//        vertexes.get(0).addNeighbor(vertexes.get(2) , 2);
+//        vertexes.get(0).addNeighbor(vertexes.get(13) , 3);
+//        vertexes.get(0).addNeighbor(vertexes.get(18) , 4);
+//        vertexes.get(0).addNeighbor(vertexes.get(14) , 5);
+//        vertexes.get(0).addNeighbor(vertexes.get(19) , 6);
+//
+//        vertexes.get(1).addNeighbor(vertexes.get(14) , 7);
+//        vertexes.get(1).addNeighbor(vertexes.get(13) , 8);
+//        vertexes.get(1).addNeighbor(vertexes.get(15) , 9);
+//        vertexes.get(1).addNeighbor(vertexes.get(3) , 10);
+//
+//        vertexes.get(2).addNeighbor(vertexes.get(13) , 1);
+//        vertexes.get(2).addNeighbor(vertexes.get(4) , 2);
+//        vertexes.get(2).addNeighbor(vertexes.get(5) , 3);
+//
+//        vertexes.get(3).addNeighbor(vertexes.get(13) , 4);
+//        vertexes.get(3).addNeighbor(vertexes.get(12) , 5);
+//        vertexes.get(3).addNeighbor(vertexes.get(6) , 6);
+//        vertexes.get(3).addNeighbor(vertexes.get(5) , 7);
+//        vertexes.get(3).addNeighbor(vertexes.get(4) , 8);
+//
+//        vertexes.get(4).addNeighbor(vertexes.get(6) , 9);
+//        vertexes.get(4).addNeighbor(vertexes.get(7) , 10);
+//        vertexes.get(4).addNeighbor(vertexes.get(8) , 1);
+//
+//        vertexes.get(5).addNeighbor(vertexes.get(7) , 2);
+//        vertexes.get(5).addNeighbor(vertexes.get(8) , 3);
+//
+//        vertexes.get(6).addNeighbor(vertexes.get(12) , 4);
+//        vertexes.get(6).addNeighbor(vertexes.get(11) , 5);
+//        vertexes.get(6).addNeighbor(vertexes.get(10) , 6);
+//        vertexes.get(6).addNeighbor(vertexes.get(9) , 7);
+//        vertexes.get(6).addNeighbor(vertexes.get(8) , 8);
+//
+//        vertexes.get(8).addNeighbor(vertexes.get(9) , 9);
+//
+//        vertexes.get(9).addNeighbor(vertexes.get(12) , 10);
+//        vertexes.get(9).addNeighbor(vertexes.get(10) , 1);
+//
+//        vertexes.get(10).addNeighbor(vertexes.get(12) , 2);
+//        vertexes.get(10).addNeighbor(vertexes.get(11) , 3);
+//        vertexes.get(10).addNeighbor(vertexes.get(16) , 4);
+//
+//        vertexes.get(11).addNeighbor(vertexes.get(16) , 5);
+//        vertexes.get(11).addNeighbor(vertexes.get(17) , 6);
+//        vertexes.get(11).addNeighbor(vertexes.get(15) , 7);
+//        vertexes.get(11).addNeighbor(vertexes.get(13) , 8);
+//        vertexes.get(11).addNeighbor(vertexes.get(12) , 9);
+//
+//        vertexes.get(12).addNeighbor(vertexes.get(13) , 10);
+//
+//        vertexes.get(13).addNeighbor(vertexes.get(14) , 1);
+//        vertexes.get(13).addNeighbor(vertexes.get(15) , 2 );
+//
+//        vertexes.get(14).addNeighbor(vertexes.get(15) , 3);
+//        vertexes.get(14).addNeighbor(vertexes.get(18) , 4);
+//
+//        vertexes.get(15).addNeighbor(vertexes.get(19) , 5);
+//
+//        vertexes.get(16).addNeighbor(vertexes.get(18) , 6);
+//        vertexes.get(16).addNeighbor(vertexes.get(16) , 7);
+//
+//        vertexes.get(17).addNeighbor(vertexes.get(18) , 8);
+//        vertexes.get(17).addNeighbor(vertexes.get(19) , 9);
+//
+//        vertexes.get(18).addNeighbor(vertexes.get(19) , 10);
+//
+//        for(int i = 0; i< vertexes.size(); i++) {
+//            for(Edge e : vertexes.get(i).edges)
+//                addEdge(e);
 //        }
-
-        this.addEdge(new Edge(new Vertex("A"), new Vertex("B"), 1));
-        this.addEdge(new Edge(new Vertex("A"), new Vertex("C"), 2));
-        this.addEdge(new Edge(new Vertex("A"), new Vertex("N"), 3));
-        this.addEdge(new Edge(new Vertex("A"), new Vertex("S"), 4));
-        this.addEdge(new Edge(new Vertex("A"), new Vertex("O"), 5));
-        this.addEdge(new Edge(new Vertex("A"), new Vertex("T"), 6));
-
-        this.addEdge(new Edge(new Vertex("B"), new Vertex("O"), 7));
-        this.addEdge(new Edge(new Vertex("B"), new Vertex("N"), 8));
-        this.addEdge(new Edge(new Vertex("B"), new Vertex("P"), 9));
-        this.addEdge(new Edge(new Vertex("B"), new Vertex("D"), 10));
-
-        this.addEdge(new Edge(new Vertex("C"), new Vertex("N"), 1));
-        this.addEdge(new Edge(new Vertex("C"), new Vertex("E"), 2));
-        this.addEdge(new Edge(new Vertex("C"), new Vertex("F"), 3));
-
-        this.addEdge(new Edge(new Vertex("D"), new Vertex("N"), 4));
-        this.addEdge(new Edge(new Vertex("D"), new Vertex("M"), 5));
-        this.addEdge(new Edge(new Vertex("D"), new Vertex("G"), 6));
-        this.addEdge(new Edge(new Vertex("D"), new Vertex("F"), 7));
-        this.addEdge(new Edge(new Vertex("D"), new Vertex("E"), 8));
-
-        this.addEdge(new Edge(new Vertex("E"), new Vertex("G"), 9));
-        this.addEdge(new Edge(new Vertex("E"), new Vertex("H"), 10));
-        this.addEdge(new Edge(new Vertex("E"), new Vertex("I"), 1));
-
-        this.addEdge(new Edge(new Vertex("F"), new Vertex("H"), 2));
-        this.addEdge(new Edge(new Vertex("F"), new Vertex("I"), 3));
-
-        this.addEdge(new Edge(new Vertex("G"), new Vertex("M"), 4));
-        this.addEdge(new Edge(new Vertex("G"), new Vertex("L"), 5));
-        this.addEdge(new Edge(new Vertex("G"), new Vertex("K"), 6));
-        this.addEdge(new Edge(new Vertex("G"), new Vertex("J"), 7));
-        this.addEdge(new Edge(new Vertex("G"), new Vertex("I"), 8));
-
-        this.addEdge(new Edge(new Vertex("I"), new Vertex("J"), 9));
-
-        this.addEdge(new Edge(new Vertex("J"), new Vertex("M"), 10));
-        this.addEdge(new Edge(new Vertex("J"), new Vertex("K"), 1));
-
-        this.addEdge(new Edge(new Vertex("K"), new Vertex("M"), 2));
-        this.addEdge(new Edge(new Vertex("K"), new Vertex("L"), 3));
-        this.addEdge(new Edge(new Vertex("K"), new Vertex("Q"), 4));
-
-        this.addEdge(new Edge(new Vertex("L"), new Vertex("Q"), 5));
-        this.addEdge(new Edge(new Vertex("L"), new Vertex("R"), 6));
-        this.addEdge(new Edge(new Vertex("L"), new Vertex("P"), 7));
-        this.addEdge(new Edge(new Vertex("L"), new Vertex("N"), 8));
-        this.addEdge(new Edge(new Vertex("L"), new Vertex("M"), 9));
-
-        this.addEdge(new Edge(new Vertex("M"), new Vertex("N"), 10));
-
-        this.addEdge(new Edge(new Vertex("N"), new Vertex("O"), 1));
-        this.addEdge(new Edge(new Vertex("N"), new Vertex("P"), 2));
-
-        this.addEdge(new Edge(new Vertex("O"), new Vertex("P"), 3));
-        this.addEdge(new Edge(new Vertex("O"), new Vertex("S"), 4));
-
-        this.addEdge(new Edge(new Vertex("P"), new Vertex("T"), 5));
-
-        this.addEdge(new Edge(new Vertex("Q"), new Vertex("S"), 6));
-        this.addEdge(new Edge(new Vertex("Q"), new Vertex("Q"), 7));
-
-        this.addEdge(new Edge(new Vertex("R"), new Vertex("S"), 8));
-        this.addEdge(new Edge(new Vertex("R"), new Vertex("T"), 9));
-
-        this.addEdge(new Edge(new Vertex("S"), new Vertex("T"), 10));
 
 //        for (Edge e : this.getEdges())
 //            e.setWeight((int) (Math.random() * 50)); // init random weight to the graph edges
 
 //        // Lior's graph
-//        this.addEdge(new Edge(new Vertex("1"), new Vertex("3"), 1));
-//        this.addEdge(new Edge(new Vertex("1"), new Vertex("2"), 5));
-//        this.addEdge(new Edge(new Vertex("2"), new Vertex("5"), 6));
-//        this.addEdge(new Edge(new Vertex("2"), new Vertex("9"), 7));
-//        this.addEdge(new Edge(new Vertex("3"), new Vertex("4"), 4));
-//        this.addEdge(new Edge(new Vertex("3"), new Vertex("5"), 2));
-//        this.addEdge(new Edge(new Vertex("4"), new Vertex("5"), 3));
-//        this.addEdge(new Edge(new Vertex("6"), new Vertex("8"), 10));
-//        this.addEdge(new Edge(new Vertex("6"), new Vertex("9"), 9));
-//        this.addEdge(new Edge(new Vertex("7"), new Vertex("9"), 8));
+        vertexes.get(0).addNeighbor(vertexes.get(2) , 1);
+        vertexes.get(0).addNeighbor(vertexes.get(1) , 5);
+        vertexes.get(1).addNeighbor(vertexes.get(4) , 6);
+        vertexes.get(1).addNeighbor(vertexes.get(8) , 7);
+        vertexes.get(2).addNeighbor(vertexes.get(3) , 4);
+        vertexes.get(2).addNeighbor(vertexes.get(4) , 2);
+        vertexes.get(3).addNeighbor(vertexes.get(4) , 3);
+        vertexes.get(5).addNeighbor(vertexes.get(7) , 10);
+        vertexes.get(5).addNeighbor(vertexes.get(8) , 9);
+        vertexes.get(6).addNeighbor(vertexes.get(8) , 8);
+
+        for(int i = 0; i< vertexes.size(); i++) {
+            for(Edge e : vertexes.get(i).edges)
+                addEdge(e);
+        }
     }
 
     public void addVertex(Vertex vertex) {
+        if(vertexExist(vertex, vertexes))
+            return;
         this.vertexes.add(vertex);
     }
 
     public void addEdge(Edge edge) {
-        if (!vertexExist(edge.getSource(), this.vertexes))
-            vertexes.add(edge.getSource());
-
-        if (!vertexExist(edge.getDestination(), this.vertexes))
-            vertexes.add(edge.getDestination());
-
-        this.edges.add(edge);
-    }
-
-    public void addRandomEdge() {
-        String key1 = new String();
-        String key2 = new String();
-        char key1Char, key2Char;
-        Edge e;
-
-        while (true) {
-            key1 = "";
-            key2 = "";
-            do {
-                key1Char = (char) ((int) (Math.random() * 26) + 'A');
-                key2Char = (char) ((int) (Math.random() * 26) + 'A');
-            } while (key1Char == key2Char);
-            key1 += key1Char;
-            key2 += key2Char;
-
-            e = new Edge(new Vertex(key1), new Vertex(key2), (int) (Math.random() * 50));
-            if (!edgeExist(e)) {
-                addEdge(e);
-                System.out.println("Edge added: " + e.getSource().getKey() + "-" + e.getWeight() + "-" + e.getDestination().getKey());
-                return;
-            }
-        }
-
+        if(edgeExist(edge))
+            return;
+        edges.add(edge);
     }
 
     private boolean edgeExist(Edge e) {
         for (Edge edge : this.edges) {
-            if ((edge.getSource().getKey() == e.getSource().getKey() && edge.getDestination().getKey() == e.getDestination().getKey()) ||
-                    (edge.getSource().getKey() == e.getDestination().getKey() && edge.getDestination().getKey() == e.getSource().getKey()))
+            if (edge.equals(e))
                 return true;
         }
-
         return false;
     }
 
@@ -172,17 +156,17 @@ public class Graph {
 
 
     public Graph prim() {
-        Graph graphTag = new Graph(new ArrayList<Vertex>(), new ArrayList<Edge>());
+        Graph graphTag = new Graph();
         ArrayList<Edge> edgesCopy = new ArrayList<>();
         Edge minEdge;
 
-        //TODO: left this and remove the first 'heap'
         PriorityQueue<Edge> heap = new PriorityQueue<Edge>();
 
         for (Edge e : this.edges) {
             edgesCopy.add(new Edge(e));
             edgesCopy.get(edgesCopy.size() - 1).setWeight((int)POSITIVE_INFINITY);
         }
+
         graphTag.addVertex(this.vertexes.get(0));
         heap.addAll(updateWeightForVertexEdge(graphTag.vertexes.get(0), edgesCopy));
 
@@ -197,10 +181,12 @@ public class Graph {
                 if (!(vertexExist(minEdge.getSource(), graphTag.vertexes))) {
                     graphTag.addVertex(minEdge.getSource());
                     heap.addAll(updateWeightForVertexEdge(minEdge.getSource(), edgesCopy));
+                    edgesCopy.remove(minEdge);
                 }
                 if (!(vertexExist(minEdge.getDestination(), graphTag.vertexes))) {
                     graphTag.addVertex(minEdge.getDestination());
                     heap.addAll(updateWeightForVertexEdge(minEdge.getDestination(), edgesCopy));
+                    edgesCopy.remove(minEdge);
                 }
                 graphTag.addEdge(minEdge);
 
