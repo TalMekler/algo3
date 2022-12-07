@@ -23,9 +23,7 @@ public class Graph {
     public void makeRandomGraph() {
 
         for (int i = 0; i< 20; i++){
-            System.out.println(i + " -> " + (char)(i + 'A'));
-            String k = "" + (char)(i + 'A');
-            vertexes.add(new Vertex(k));
+            vertexes.add(new Vertex("" + (char)(i + 'A')));
         }
 //
 //        vertexes.get(0).addNeighbor(vertexes.get(1) , 1);
@@ -138,9 +136,6 @@ public class Graph {
         addVertex(edge.getDestination());
 
         getVertexByKey(edge.getSource().getKey()).addNeighbor(getVertexByKey(edge.getDestination().getKey()), edge.getWeight());
-
-        edge.getSource().addNeighbor(edge.getDestination() , edge.getWeight());
-
         edges.add(edge);
     }
 
@@ -167,24 +162,13 @@ public class Graph {
 
     public Graph prim() {
         Graph graphTag = new Graph();
-        ArrayList<Edge> edgesCopy = new ArrayList<>();
         Edge minEdge;
 
         PriorityQueue<Edge> heap = new PriorityQueue<Edge>();
 
-        for (Edge e : this.edges) {
-            edgesCopy.add(new Edge(e));
-            edgesCopy.get(edgesCopy.size() - 1).setWeight((int)POSITIVE_INFINITY);
-        }
-
         graphTag.addVertex(this.vertexes.get(0));
-//        edgesCopy.addAll(graphTag.vertexes.get(0).edges);
-        heap.addAll(updateWeightForVertexEdge(graphTag.vertexes.get(0), edgesCopy));
+        heap.addAll(graphTag.vertexes.get(0).edges);
 
-
-        //TODO: left this and remove the first 'heap'
-//        for(Edge e : edgesCopy)
-//            heap.add(e);
 
         while (heap.size() > 0) {
             minEdge = heap.remove();
@@ -193,22 +177,16 @@ public class Graph {
                 if (!(vertexExist(minEdge.getSource(), graphTag.vertexes))) {
                     graphTag.addVertex(minEdge.getSource());
                     minEdge.getSource().setPi(minEdge.getDestination());
-                    heap.addAll(updateWeightForVertexEdge(minEdge.getSource(), edgesCopy));
-                    edgesCopy.remove(minEdge);
+                    heap.addAll(minEdge.getSource().edges);
                 }
                 if (!(vertexExist(minEdge.getDestination(), graphTag.vertexes))) {
                     graphTag.addVertex(minEdge.getDestination());
                     minEdge.getDestination().setPi(minEdge.getSource());
-                    heap.addAll(updateWeightForVertexEdge(minEdge.getDestination(), edgesCopy));
-                    edgesCopy.remove(minEdge);
+                    heap.addAll(minEdge.getDestination().edges);
                 }
                 graphTag.addEdge(minEdge);
-                heap.addAll(updateWeightForVertexEdge(minEdge.getDestination(), edgesCopy));
-
             }
-
         }
-
         return graphTag;
     }
 

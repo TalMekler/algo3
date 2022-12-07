@@ -1,7 +1,7 @@
 package algo3_package;
 
 public class Main {
-    public static void main(String argv[]) {
+    public static void main(String[] argv) {
 
         Graph graph = new Graph();
         graph.makeRandomGraph(); // make the graph (random weights)
@@ -11,11 +11,11 @@ public class Main {
         graphPrim = graph.prim();
         graphPrim.print();
 
-        graphPrim.addEdge(new Edge(new Vertex("D"), new Vertex("F"), 1));
-        System.out.println("Last edge: " + graphPrim.getEdges().get(graphPrim.getEdges().size() - 1));
-        graphPrim.print();
+//        graphPrim.addEdge(new Edge(new Vertex("D"), new Vertex("F"), 1));
+//        System.out.println("Last edge: " + graphPrim.getEdges().get(graphPrim.getEdges().size() - 1));
+//        graphPrim.print();
 
-        graphPrim.getVertexByKey("F").printPath();
+        graphPrim.getVertexByKey("D").printPath();
 
 
         System.out.println("\nDone!");
