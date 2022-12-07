@@ -68,4 +68,14 @@ public class Vertex {
             currentVertex = currentVertex.getPi();
         }
     }
+
+    public boolean isVertexInThePath(Vertex v) {
+        Vertex currentVertex = this;
+        while (currentVertex.getPi() != null){
+            if(currentVertex.getPi().equals(v))
+                return true;
+            currentVertex = currentVertex.getPi();
+        }
+        return false;
+    }
 }
