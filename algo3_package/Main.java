@@ -11,11 +11,8 @@ public class Main {
         graphPrim = graph.prim();
         graphPrim.print();
 
-        graphPrim.addEdge(new Edge(new Vertex("H"), new Vertex("B"), 1));
-        if(graphPrim.getVertexByKey("H").isVertexInThePath(graphPrim.getVertexByKey("B")))
-            System.out.println("B in H path");
-        if(graphPrim.getVertexByKey("B").isVertexInThePath(graphPrim.getVertexByKey("H")))
-            System.out.println("H in B path");
+        graphPrim.addEdge(new Edge(new Vertex("H"), new Vertex("G"), 1));
+        System.out.println("First shared vertex between H and G is: " + graphPrim.getVertexByKey("H").firstSharedVertexInPath(graphPrim.getVertexByKey("G")));
 //        System.out.println("Last edge: " + graphPrim.getEdges().get(graphPrim.getEdges().size() - 1));
 //        graphPrim.print();
 
