@@ -220,13 +220,23 @@ public class Graph {
         int maxWeight = (int)NEGATIVE_INFINITY;
         Edge maxEdge = null;
         Vertex currentVertex = from;
-
-        while(!currentVertex.equals(to) && currentVertex.getPi() != null) {
-            if(currentVertex.getEdgeToNeighbor(currentVertex.getPi().getKey()).getWeight() > maxWeight) {
-                maxEdge = currentVertex.getEdgeToNeighbor(currentVertex.getPi().getKey());
-                maxWeight = maxEdge.getWeight();
+        if(to != null) {
+            while (!currentVertex.equals(to) && currentVertex.getPi() != null) {
+                if (currentVertex.getEdgeToNeighbor(currentVertex.getPi().getKey()).getWeight() > maxWeight) {
+                    maxEdge = currentVertex.getEdgeToNeighbor(currentVertex.getPi().getKey());
+                    maxWeight = maxEdge.getWeight();
+                }
+                currentVertex = currentVertex.getPi();
             }
-            currentVertex = currentVertex.getPi();
+        }
+        else{
+            while (currentVertex.getPi() != null) {
+                if (currentVertex.getEdgeToNeighbor(currentVertex.getPi().getKey()).getWeight() > maxWeight) {
+                    maxEdge = currentVertex.getEdgeToNeighbor(currentVertex.getPi().getKey());
+                    maxWeight = maxEdge.getWeight();
+                }
+                currentVertex = currentVertex.getPi();
+            }
         }
 
         return maxEdge;
