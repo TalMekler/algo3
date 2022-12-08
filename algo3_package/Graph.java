@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 
+import static java.lang.Double.NEGATIVE_INFINITY;
 import static java.lang.Double.POSITIVE_INFINITY;
 
 public class Graph {
@@ -209,11 +210,27 @@ public class Graph {
         return 0;
     }
 
+    public Edge maxEdgeInPath(Vertex from, Vertex to) {
+        int maxWeight = (int)NEGATIVE_INFINITY;
+        Edge maxEdge = null;
+        Vertex currentVertex = from;
+
+        while(!currentVertex.equals(to) && currentVertex.getPi() != null) {
+            if(currentVertex.getEdgeToNeighbor(currentVertex.getPi().getKey()).getWeight() > maxWeight) {
+                maxEdge = currentVertex.getEdgeToNeighbor(currentVertex.getPi().getKey());
+                maxWeight = maxEdge.getWeight();
+            }
+            currentVertex = currentVertex.getPi();
+        }
+
+        return maxEdge;
+    }
+
     public void print() {
         System.out.println("Vertexes (" + this.vertexes.size() + "): ");
         int cnt = 1;
         for (Vertex v : this.vertexes) {
-            System.out.print(v.getKey());
+            System.out.print(v);
             if (cnt % 10 == 0)
                 System.out.println();
             else if (v.getKey() != this.vertexes.get(this.vertexes.size() - 1).getKey())
@@ -227,7 +244,7 @@ public class Graph {
         cnt = 1;
         System.out.println("Edges (" + this.edges.size() + "): ");
         for (Edge e : edges) {
-            System.out.print(e.getSource().getKey() + "-" + e.getWeight() + "-" + e.getDestination().getKey());
+            System.out.print(e.getSource() + "-" + e.getWeight() + "-" + e.getDestination());
             if (cnt % 10 == 0)
                 System.out.println();
             else if (e.getKey() != this.edges.get(this.edges.size() - 1).getKey())
