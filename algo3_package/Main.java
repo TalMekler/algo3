@@ -16,8 +16,18 @@ public class Main {
         System.out.println("Max edge between H and I is: " + graphPrim.maxEdgeInPath(graphPrim.getVertexByKey("H"), graphPrim.getVertexByKey("I")));
         System.out.println("Max edge between G and I is: " + graphPrim.maxEdgeInPath(graphPrim.getVertexByKey("G"), graphPrim.getVertexByKey("I")));
 
+        Edge maxEdgeInCircle;
+        maxEdgeInCircle = (graphPrim.maxEdgeInPath(graphPrim.getVertexByKey("H"), graphPrim.getVertexByKey("I")).getWeight()
+                            > graphPrim.maxEdgeInPath(graphPrim.getVertexByKey("G"), graphPrim.getVertexByKey("I")).getWeight()) ?
+                            graphPrim.maxEdgeInPath(graphPrim.getVertexByKey("H"), graphPrim.getVertexByKey("I")) : graphPrim.maxEdgeInPath(graphPrim.getVertexByKey("G"), graphPrim.getVertexByKey("I"));
+        System.out.println("Max edge: " + maxEdgeInCircle);
+        maxEdgeInCircle = (maxEdgeInCircle.getWeight() > graphPrim.getEdges().get(graphPrim.getEdges().size() - 1).getWeight()) ?
+                            maxEdgeInCircle : graphPrim.getEdges().get(graphPrim.getEdges().size() - 1);
+        graphPrim.print();
+        System.out.println("Max edge: " + maxEdgeInCircle);
+        graphPrim.removeEdge(maxEdgeInCircle);
+        graphPrim.print();
 
-        graphPrim.getVertexByKey("D").printPath();
 
 
         System.out.println("\nDone!");

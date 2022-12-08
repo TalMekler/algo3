@@ -140,6 +140,12 @@ public class Graph {
         edges.add(edge);
     }
 
+    public void removeEdge(Edge e) {
+        for (Edge edge : edges)
+            if(e.equals(edge))
+                edges.remove(edge);
+    }
+
     private boolean edgeExist(Edge e) {
         for (Edge edge : this.edges) {
             if (edge.equals(e))
