@@ -20,11 +20,10 @@ public class Main {
         maxEdgeInCircle = (graphPrim.maxEdgeInPath(graphPrim.getVertexByKey("H"), graphPrim.getVertexByKey("I")).getWeight()
                             > graphPrim.maxEdgeInPath(graphPrim.getVertexByKey("G"), graphPrim.getVertexByKey("I")).getWeight()) ?
                             graphPrim.maxEdgeInPath(graphPrim.getVertexByKey("H"), graphPrim.getVertexByKey("I")) : graphPrim.maxEdgeInPath(graphPrim.getVertexByKey("G"), graphPrim.getVertexByKey("I"));
-        System.out.println("Max edge: " + maxEdgeInCircle);
         maxEdgeInCircle = (maxEdgeInCircle.getWeight() > graphPrim.getEdges().get(graphPrim.getEdges().size() - 1).getWeight()) ?
                             maxEdgeInCircle : graphPrim.getEdges().get(graphPrim.getEdges().size() - 1);
         graphPrim.print();
-        System.out.println("Max edge: " + maxEdgeInCircle);
+        System.out.println("Max edge in the circle: " + maxEdgeInCircle);
         graphPrim.removeEdge(maxEdgeInCircle);
         graphPrim.print();
 

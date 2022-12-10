@@ -7,7 +7,7 @@ public class Vertex {
     private final ArrayList<Vertex> neighbors;
     ArrayList<Edge> edges;
     private Vertex pi;
-//    private int color; // 0 - white, 1 - gray, 2 - black
+    private int color; // 0 - white, 1 - gray, 2 - black
 
 
     @Override
@@ -20,7 +20,7 @@ public class Vertex {
         this.neighbors = new ArrayList<Vertex>();
         this.edges = new ArrayList<Edge>();
         this.pi = null;
-//        this.color = 0;
+        this.color = 0;
     }
 
     public boolean equals(Vertex other) {
@@ -35,6 +35,13 @@ public class Vertex {
         return neighbors;
     }
 
+    public void setColor(int color) {
+        this.color = color;
+    }
+
+    public int getColor() {
+        return this.color;
+    }
 
     public Edge getEdgeToNeighbor(String neighborKey) {
         for (Edge e : edges)
@@ -59,6 +66,22 @@ public class Vertex {
 
         neighbor.neighbors.add(this);
         neighbor.edges.add(new Edge(neighbor, this, edgeWeight));
+    }
+
+    public void removeNeighbor(Vertex neighbor) {
+        if(!neighborExist(neighbor))
+            return;
+
+        neighbors.remove(neighbor);
+        neighbor.neighbors.remove(this);
+
+        edges.remove(getEdgeToNeighbor(neighbor.getKey()));
+        neighbor.edges.remove(neighbor.getEdgeToNeighbor(this.getKey()));
+    }
+
+    public void removeNeighbors() {
+        while(neighbors.size() > 0)
+            removeNeighbor(neighbors.get(0));
     }
 
     public Vertex getPi() {

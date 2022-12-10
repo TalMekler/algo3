@@ -2,7 +2,9 @@ package algo3_package;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 import static java.lang.Double.NEGATIVE_INFINITY;
 import static java.lang.Double.POSITIVE_INFINITY;
@@ -194,6 +196,12 @@ public class Graph {
                 graphTag.addEdge(minEdge);
             }
         }
+
+        for(Vertex v : graphTag.vertexes)
+            v.removeNeighbors();
+        for (Edge e : graphTag.edges)
+            e.getSource().addNeighbor(e.getDestination(), e.getWeight());
+
         return graphTag;
     }
 
