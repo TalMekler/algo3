@@ -26,96 +26,96 @@ public class Graph {
             vertexes.add(new Vertex("" + (char)(i + 'A')));
         }
 //
-//        vertexes.get(0).addNeighbor(vertexes.get(1) , 1);
-//        vertexes.get(0).addNeighbor(vertexes.get(2) , 2);
-//        vertexes.get(0).addNeighbor(vertexes.get(13) , 3);
-//        vertexes.get(0).addNeighbor(vertexes.get(18) , 4);
-//        vertexes.get(0).addNeighbor(vertexes.get(14) , 5);
-//        vertexes.get(0).addNeighbor(vertexes.get(19) , 6);
-//
-//        vertexes.get(1).addNeighbor(vertexes.get(14) , 7);
-//        vertexes.get(1).addNeighbor(vertexes.get(13) , 8);
-//        vertexes.get(1).addNeighbor(vertexes.get(15) , 9);
-//        vertexes.get(1).addNeighbor(vertexes.get(3) , 10);
-//
-//        vertexes.get(2).addNeighbor(vertexes.get(13) , 1);
-//        vertexes.get(2).addNeighbor(vertexes.get(4) , 2);
-//        vertexes.get(2).addNeighbor(vertexes.get(5) , 3);
-//
-//        vertexes.get(3).addNeighbor(vertexes.get(13) , 4);
-//        vertexes.get(3).addNeighbor(vertexes.get(12) , 5);
-//        vertexes.get(3).addNeighbor(vertexes.get(6) , 6);
-//        vertexes.get(3).addNeighbor(vertexes.get(5) , 7);
-//        vertexes.get(3).addNeighbor(vertexes.get(4) , 8);
-//
-//        vertexes.get(4).addNeighbor(vertexes.get(6) , 9);
-//        vertexes.get(4).addNeighbor(vertexes.get(7) , 10);
-//        vertexes.get(4).addNeighbor(vertexes.get(8) , 1);
-//
-//        vertexes.get(5).addNeighbor(vertexes.get(7) , 2);
-//        vertexes.get(5).addNeighbor(vertexes.get(8) , 3);
-//
-//        vertexes.get(6).addNeighbor(vertexes.get(12) , 4);
-//        vertexes.get(6).addNeighbor(vertexes.get(11) , 5);
-//        vertexes.get(6).addNeighbor(vertexes.get(10) , 6);
-//        vertexes.get(6).addNeighbor(vertexes.get(9) , 7);
-//        vertexes.get(6).addNeighbor(vertexes.get(8) , 8);
-//
-//        vertexes.get(8).addNeighbor(vertexes.get(9) , 9);
-//
-//        vertexes.get(9).addNeighbor(vertexes.get(12) , 10);
-//        vertexes.get(9).addNeighbor(vertexes.get(10) , 1);
-//
-//        vertexes.get(10).addNeighbor(vertexes.get(12) , 2);
-//        vertexes.get(10).addNeighbor(vertexes.get(11) , 3);
-//        vertexes.get(10).addNeighbor(vertexes.get(16) , 4);
-//
-//        vertexes.get(11).addNeighbor(vertexes.get(16) , 5);
-//        vertexes.get(11).addNeighbor(vertexes.get(17) , 6);
-//        vertexes.get(11).addNeighbor(vertexes.get(15) , 7);
-//        vertexes.get(11).addNeighbor(vertexes.get(13) , 8);
-//        vertexes.get(11).addNeighbor(vertexes.get(12) , 9);
-//
-//        vertexes.get(12).addNeighbor(vertexes.get(13) , 10);
-//
-//        vertexes.get(13).addNeighbor(vertexes.get(14) , 1);
-//        vertexes.get(13).addNeighbor(vertexes.get(15) , 2 );
-//
-//        vertexes.get(14).addNeighbor(vertexes.get(15) , 3);
-//        vertexes.get(14).addNeighbor(vertexes.get(18) , 4);
-//
-//        vertexes.get(15).addNeighbor(vertexes.get(19) , 5);
-//
-//        vertexes.get(16).addNeighbor(vertexes.get(18) , 6);
-//        vertexes.get(16).addNeighbor(vertexes.get(16) , 7);
-//
-//        vertexes.get(17).addNeighbor(vertexes.get(18) , 8);
-//        vertexes.get(17).addNeighbor(vertexes.get(19) , 9);
-//
-//        vertexes.get(18).addNeighbor(vertexes.get(19) , 10);
-//
-//        for(int i = 0; i< vertexes.size(); i++) {
-//            for(Edge e : vertexes.get(i).edges)
-//                addEdge(e);
-//        }
+        vertexes.get(0).addNeighbor(vertexes.get(1) , 1);
+        vertexes.get(0).addNeighbor(vertexes.get(2) , 2);
+        vertexes.get(0).addNeighbor(vertexes.get(13) , 3);
+        vertexes.get(0).addNeighbor(vertexes.get(18) , 4);
+        vertexes.get(0).addNeighbor(vertexes.get(14) , 5);
+        vertexes.get(0).addNeighbor(vertexes.get(19) , 6);
 
+        vertexes.get(1).addNeighbor(vertexes.get(14) , 7);
+        vertexes.get(1).addNeighbor(vertexes.get(13) , 8);
+        vertexes.get(1).addNeighbor(vertexes.get(15) , 9);
+        vertexes.get(1).addNeighbor(vertexes.get(3) , 10);
 
-        // Lior's graph
-        vertexes.get(0).addNeighbor(vertexes.get(2) , 1);
-        vertexes.get(0).addNeighbor(vertexes.get(1) , 5);
-        vertexes.get(1).addNeighbor(vertexes.get(4) , 6);
-        vertexes.get(1).addNeighbor(vertexes.get(8) , 7);
-        vertexes.get(2).addNeighbor(vertexes.get(3) , 4);
+        vertexes.get(2).addNeighbor(vertexes.get(13) , 1);
         vertexes.get(2).addNeighbor(vertexes.get(4) , 2);
-        vertexes.get(3).addNeighbor(vertexes.get(4) , 3);
-        vertexes.get(5).addNeighbor(vertexes.get(7) , 10);
-        vertexes.get(5).addNeighbor(vertexes.get(8) , 9);
+        vertexes.get(2).addNeighbor(vertexes.get(5) , 3);
+
+        vertexes.get(3).addNeighbor(vertexes.get(13) , 4);
+        vertexes.get(3).addNeighbor(vertexes.get(12) , 5);
+        vertexes.get(3).addNeighbor(vertexes.get(6) , 6);
+        vertexes.get(3).addNeighbor(vertexes.get(5) , 7);
+        vertexes.get(3).addNeighbor(vertexes.get(4) , 8);
+
+        vertexes.get(4).addNeighbor(vertexes.get(6) , 9);
+        vertexes.get(4).addNeighbor(vertexes.get(7) , 10);
+        vertexes.get(4).addNeighbor(vertexes.get(8) , 1);
+
+        vertexes.get(5).addNeighbor(vertexes.get(7) , 2);
+        vertexes.get(5).addNeighbor(vertexes.get(8) , 3);
+
+        vertexes.get(6).addNeighbor(vertexes.get(12) , 4);
+        vertexes.get(6).addNeighbor(vertexes.get(11) , 5);
+        vertexes.get(6).addNeighbor(vertexes.get(10) , 6);
+        vertexes.get(6).addNeighbor(vertexes.get(9) , 7);
         vertexes.get(6).addNeighbor(vertexes.get(8) , 8);
+
+        vertexes.get(8).addNeighbor(vertexes.get(9) , 9);
+
+        vertexes.get(9).addNeighbor(vertexes.get(12) , 10);
+        vertexes.get(9).addNeighbor(vertexes.get(10) , 1);
+
+        vertexes.get(10).addNeighbor(vertexes.get(12) , 2);
+        vertexes.get(10).addNeighbor(vertexes.get(11) , 3);
+        vertexes.get(10).addNeighbor(vertexes.get(16) , 4);
+
+        vertexes.get(11).addNeighbor(vertexes.get(16) , 5);
+        vertexes.get(11).addNeighbor(vertexes.get(17) , 6);
+        vertexes.get(11).addNeighbor(vertexes.get(15) , 7);
+        vertexes.get(11).addNeighbor(vertexes.get(13) , 8);
+        vertexes.get(11).addNeighbor(vertexes.get(12) , 9);
+
+        vertexes.get(12).addNeighbor(vertexes.get(13) , 10);
+
+        vertexes.get(13).addNeighbor(vertexes.get(14) , 1);
+        vertexes.get(13).addNeighbor(vertexes.get(15) , 2 );
+
+        vertexes.get(14).addNeighbor(vertexes.get(15) , 3);
+        vertexes.get(14).addNeighbor(vertexes.get(18) , 4);
+
+        vertexes.get(15).addNeighbor(vertexes.get(19) , 5);
+
+        vertexes.get(16).addNeighbor(vertexes.get(18) , 6);
+        vertexes.get(16).addNeighbor(vertexes.get(16) , 7);
+
+        vertexes.get(17).addNeighbor(vertexes.get(18) , 8);
+        vertexes.get(17).addNeighbor(vertexes.get(19) , 9);
+
+        vertexes.get(18).addNeighbor(vertexes.get(19) , 10);
 
         for(int i = 0; i< vertexes.size(); i++) {
             for(Edge e : vertexes.get(i).edges)
                 addEdge(e);
         }
+
+
+        // Lior's graph
+//        vertexes.get(0).addNeighbor(vertexes.get(2) , 1);
+//        vertexes.get(0).addNeighbor(vertexes.get(1) , 5);
+//        vertexes.get(1).addNeighbor(vertexes.get(4) , 6);
+//        vertexes.get(1).addNeighbor(vertexes.get(8) , 7);
+//        vertexes.get(2).addNeighbor(vertexes.get(3) , 4);
+//        vertexes.get(2).addNeighbor(vertexes.get(4) , 2);
+//        vertexes.get(3).addNeighbor(vertexes.get(4) , 3);
+//        vertexes.get(5).addNeighbor(vertexes.get(7) , 10);
+//        vertexes.get(5).addNeighbor(vertexes.get(8) , 9);
+//        vertexes.get(6).addNeighbor(vertexes.get(8) , 8);
+//
+//        for(int i = 0; i< vertexes.size(); i++) {
+//            for(Edge e : vertexes.get(i).edges)
+//                addEdge(e);
+//        }
     }
 
     public void addVertex(Vertex vertex) {
@@ -140,11 +140,15 @@ public class Graph {
     }
 
     public void removeEdge(Edge e) {
-        for (Edge edge : edges)
-            if(e.equals(edge)){
-                edges.remove(edge);
-                fixPI();
+        Edge edgeToRemove = null;
+        for (Edge edge : edges) {
+            if (e.equals(edge)) {
+                edgeToRemove = edge;
+                break;
             }
+        }
+        edges.remove(edgeToRemove);
+        fixPI();
     }
 
     private boolean edgeExist(Edge e) {
