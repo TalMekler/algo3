@@ -1,10 +1,7 @@
 package algo3_package;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
 import static java.lang.Double.NEGATIVE_INFINITY;
 import static java.lang.Double.POSITIVE_INFINITY;
@@ -144,8 +141,10 @@ public class Graph {
 
     public void removeEdge(Edge e) {
         for (Edge edge : edges)
-            if(e.equals(edge))
+            if(e.equals(edge)){
                 edges.remove(edge);
+                fixPI();
+            }
     }
 
     private boolean edgeExist(Edge e) {
@@ -248,6 +247,27 @@ public class Graph {
         }
 
         return maxEdge;
+    }
+
+    private void fixPI() {
+        LinkedList<Vertex> vQueue = new LinkedList<Vertex>();
+        vQueue.add(vertexes.get(0));
+        Vertex currentVertex;
+//        for(Vertex v : vertexes)
+//            v.setPi(null);
+        HashMap<String, Vertex> updated = new HashMap<>();
+        updated.put(vertexes.get(0).getKey(), vertexes.get(0));
+
+        while (!vQueue.isEmpty()) {
+            currentVertex = vQueue.remove();
+            for(Vertex n : currentVertex.getNeighbors()){
+                if(!updated.containsKey(n.getKey())) {
+                    n.setPi(currentVertex);
+                    vQueue.add(n);
+                    updated.put(n.getKey(), n);
+                }
+            }
+        }
     }
 
     public void print() {

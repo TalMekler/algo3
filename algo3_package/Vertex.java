@@ -24,6 +24,8 @@ public class Vertex {
     }
 
     public boolean equals(Vertex other) {
+        if(other == null)
+            return false;
         return key == other.key;
     }
 
