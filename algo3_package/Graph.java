@@ -25,7 +25,7 @@ public class Graph {
         for (int i = 0; i< 20; i++){
             vertexes.add(new Vertex("" + (char)(i + 'A')));
         }
-//
+
         vertexes.get(0).addNeighbor(vertexes.get(1) , 1);
         vertexes.get(0).addNeighbor(vertexes.get(2) , 2);
         vertexes.get(0).addNeighbor(vertexes.get(13) , 3);
@@ -257,8 +257,7 @@ public class Graph {
         LinkedList<Vertex> vQueue = new LinkedList<Vertex>();
         vQueue.add(vertexes.get(0));
         Vertex currentVertex;
-//        for(Vertex v : vertexes)
-//            v.setPi(null);
+
         HashMap<String, Vertex> updated = new HashMap<>();
         updated.put(vertexes.get(0).getKey(), vertexes.get(0));
 
